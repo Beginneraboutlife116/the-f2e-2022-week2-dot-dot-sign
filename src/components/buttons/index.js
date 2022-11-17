@@ -1,22 +1,24 @@
 import Image from "next/image"
-import penIcon from "../../assets/img/pen-icon.svg"
 import cancelIcon from "../../assets/img/cancel-icon.svg"
 
-function UpdateButton({ onClick, icon, label }) {
+function CreateSignButton({ onClick, icon, label }) {
   return (
-    <button className="btn btn__create-sign" onClick={onClick}>
+    <button
+      className="btn btn__create-sign"
+      onClick={onClick}
+      aria-label={label}>
       {label}
       <Image src={icon} alt={label} width={"1.5em"} height={"1.5em"}></Image>
     </button>
   )
 }
 
-function LoadedSignButton({ onClick, cancelSignFile }) {
+function LoadedSignButton({ onClick, cancelSignFile, signImage }) {
   return (
     <div className="btn__loaded-sign">
       <button className="btn" onClick={onClick}>
         <Image
-          src={penIcon}
+          src={signImage}
           className="btn__loaded-image"
           alt="載入之簽名檔"></Image>
       </button>
@@ -30,12 +32,45 @@ function LoadedSignButton({ onClick, cancelSignFile }) {
   )
 }
 
-function BasicButton({ onClick, children, className }) {
+function HistoryButton({ onClick, historyFile }) {
   return (
-    <button onClick={onClick} className={`btn btn__basic ${className}`}>
-      {children}
+    <button
+      onClick={onClick}
+      aria-label={historyFile.name}
+      className="btn btn_basic btn__history-file">
+      <span>{historyFile.name}</span>
+      <span>{historyFile.uploadedAt}</span>
+      <span>{historyFile.lastOpened ? historyFile.lastOpened : "--"}</span>
     </button>
   )
 }
 
-export { UpdateButton, LoadedSignButton, BasicButton }
+function ActivateButton({ onClick, label }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      className="btn btn_basic btn__activate">
+      {label}
+    </button>
+  )
+}
+
+function DenyButton({ onClick, label }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      className="btn btn_basic btn__deny">
+      {label}
+    </button>
+  )
+}
+
+export {
+  CreateSignButton,
+  LoadedSignButton,
+  ActivateButton,
+  DenyButton,
+  HistoryButton
+}
