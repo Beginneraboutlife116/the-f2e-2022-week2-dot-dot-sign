@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+.btn {
+  background-color: transparent;
+  color: map-get($map: $colors, $key: "dark-grey");
+  cursor: pointer;
+  min-height: 3.75rem;
+  border: none;
+
+  &__basic {
+    padding: 0.75em 2.2em;
+    border-radius: 99em;
+  }
+
+  &_disabled {
+    cursor: none;
+    color: map-get($map: $colors, $key: "white");
+    background-color: map-get($map: $colors, $key: "mid-grey");
+  }
+
+  &__create-sign {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: 1px dashed currentColor;
+    &:hover {
+      background-color: map-get($map: $colors, $key: "light-main");
+    }
+  }
+
+  &__loaded-sign {
+    width: 100%;
+    border: 1px dashed currentColor;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    &:hover {
+      background-color: map-get($map: $colors, $key: "light-main");
+    }
+  }
+
+  &__loaded-image {
+    object-fit: contain;
+    height: 3.75rem;
+  }
+}
