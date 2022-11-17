@@ -22,8 +22,9 @@ ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
-a:not([class]) {
+a {
   text-decoration-skip-ink: all;
+  text-decoration: none;
 }
 :where(img, picture, video, canvas, svg) {
   display: block;

@@ -1,0 +1,4 @@
+@mixin background-clip($bg-clr) {
+  box-shadow: 0 0 0 100vmax $bg-clr;
+  clip-path: inset(0 -100vmax);
+}

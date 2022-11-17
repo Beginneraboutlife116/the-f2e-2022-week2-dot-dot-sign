@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.header {
+  background-color: map-get($map: $colors, $key: light-main);
+  min-height: 1.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend %container;
+  @include background-clip(map-get($map: $colors, $key: light-main));
+  @media (min-width: 48em) {
+    min-height: 3.75rem;
+  }
+}
+
+.nav {
+  &__list {
+    padding: 0;
+    display: flex;
+    gap: 1.875rem;
+  }
+
+  &__btn {
+    color: map-get($map: $colors, $key: secondary);
+    &:where(:hover, :focus-within, :active) {
+      color: map-get($map: $colors, $key: primary);
+    }
+    &:disabled {
+      cursor: initial;
+      color: map-get($map: $colors, $key: disabled-grey);
+    }
+  }
+}
