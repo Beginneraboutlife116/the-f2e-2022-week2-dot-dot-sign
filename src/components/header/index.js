@@ -11,7 +11,9 @@ export default function Header() {
   return (
     <header className={`header ${open ? "nav_open" : ""}`}>
       <div className="header__container">
-        <Image src={logo} alt="logo" height={25} className="header__img" />
+        <Link href={"/"}>
+          <Image src={logo} alt="logo" height={25} className="header__img" />
+        </Link>
         <nav className="nav">
           <ul className="nav__list" role="list">
             <li className="nav__item">

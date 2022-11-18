@@ -11,7 +11,7 @@ export default function Main() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <main className="main">
         <h1>Hello!</h1>
       </main>
       <Footer step={"upload"} />

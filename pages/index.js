@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="main__home">
+      <main className="home">
         <div>
           <div>
             <Image src={logo} alt="logo" />
