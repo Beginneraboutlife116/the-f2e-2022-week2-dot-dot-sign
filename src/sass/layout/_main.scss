@@ -1,0 +1,5 @@
+@use "../abstracts" as *;
+
+.main {
+  background-color: map-get($map: $colors, $key: "mid-grey");
+}
