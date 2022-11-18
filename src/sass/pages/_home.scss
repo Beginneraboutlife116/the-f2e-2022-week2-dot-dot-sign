@@ -1,8 +1,58 @@
+@use "../abstracts" as *;
+
 .home {
-  background-image: url("../../assets/img/cover-sm.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-image: url("../../assets/img/cover-sm.svg");
+  display: grid;
+  align-items: center;
+
+  &__cta {
+    display: grid;
+    align-content: space-between;
+    height: 75vh;
+    margin-inline: auto;
+    width: 14rem;
+  }
+
+  &__title {
+    font-size: 0.625rem;
+    letter-spacing: 1em;
+    margin-block-start: 0.625rem;
+    color: map-get($map: $colors, $key: "secondary");
+  }
+
+  &__link {
+    width: 100%;
+    font-size: 0.625rem;
+    background-color: map-get($map: $colors, $key: "light-main");
+    height: 10vh;
+    display: grid;
+    place-content: center;
+    box-shadow: 0px 1.80645px 1.80645px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (min-width: 45rem) {
+    &__cta {
+      width: 30rem;
+    }
+    &__title {
+      font-size: 1.5rem;
+      margin-block-start: 1.5rem;
+    }
+    &__link {
+      font-size: 1.5rem;
+    }
+  }
+
   @media (min-width: 75rem) {
     background-image: url("../../assets/img/cover-lg.svg");
+    &__cta {
+      margin-inline-start: auto;
+      margin-inline-end: clamp(5rem, calc(-20rem + 33.33vw), 17.5rem);
+      height: auto;
+      gap: 9vh;
+    }
   }
 }

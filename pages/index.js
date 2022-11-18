@@ -14,12 +14,14 @@ export default function Home() {
       </Head>
       <Header />
       <main className="home">
-        <div>
+        <div className="home__cta">
           <div>
             <Image src={logo} alt="logo" />
-            <p>線上簽署，方便快速。</p>
+            <h1 className="home__title">線上簽署，方便快速。</h1>
           </div>
-          <Link href="/main">簽署新文件</Link>
+          <Link href="/main" className="btn home__link">
+            簽署新文件
+          </Link>
         </div>
       </main>
     </div>
