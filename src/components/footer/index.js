@@ -13,21 +13,23 @@ export default function Footer({ step }) {
   }
   return (
     <footer className="footer">
-      <div className="progress">
-        <div className="progress__first">
-          <p>上傳文件</p>
-          <div className="dot"></div>
+      <div className="footer__container">
+        <div className="progress">
+          <div className="progress__first">
+            <p>上傳文件</p>
+            <div className="dot"></div>
+          </div>
+          <div className="progress__second">
+            <p>進行簽署</p>
+            <div className="dot"></div>
+          </div>
+          <div className="progress__third">
+            <p>下載文件</p>
+            <div className="dot"></div>
+          </div>
         </div>
-        <div className="progress__second">
-          <p>進行簽署</p>
-          <div className="dot"></div>
-        </div>
-        <div className="progress__third">
-          <p>下載文件</p>
-          <div className="dot"></div>
-        </div>
+        <div className="footer__buttons">{content}</div>
       </div>
-      <div className="footer__buttons">{content}</div>
     </footer>
   )
 }
