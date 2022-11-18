@@ -1,0 +1,47 @@
+@use "../abstracts" as *;
+
+.progress {
+  width: 16.875rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__second,
+  &__third {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 9px;
+      width: 102px;
+      border-top: 3px solid map-get($map: $colors, $key: "white");
+      border-bottom: 3px solid map-get($map: $colors, $key: "white");
+      bottom: 0;
+      right: -11px;
+      translate: -50% 0;
+      z-index: 0;
+    }
+  }
+
+  @media (min-width: 90em) {
+    width: 27.25rem;
+    height: 3.1875rem;
+  }
+}
+
+.dot {
+  width: 1.375rem;
+  margin-inline: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: map-get($map: $colors, $key: "dark");
+  border: 3px solid map-get($map: $colors, $key: "white");
+  position: relative;
+  z-index: 1;
+  &_curr {
+    background-color: map-get($map: $colors, $key: "primary");
+  }
+  &_prev {
+    background-color: map-get($map: $colors, $key: "secondary");
+  }
+}

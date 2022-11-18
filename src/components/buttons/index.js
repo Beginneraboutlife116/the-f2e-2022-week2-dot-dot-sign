@@ -56,12 +56,12 @@ function ActivateButton({ onClick, label }) {
   )
 }
 
-function DenyButton({ onClick, label }) {
+function DenyButton({ onClick, label, className }) {
   return (
     <button
       onClick={onClick}
       aria-label={label}
-      className="btn btn_basic btn__deny">
+      className={`btn btn_basic btn__deny ${className}`}>
       {label}
     </button>
   )
