@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .layout {
   &_basic {
     height: 100vh;

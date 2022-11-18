@@ -4,10 +4,6 @@
   background-color: map-get($map: $colors, $key: "light-main");
   min-height: 1.875rem;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @extend %container;
 
   &::after {
     position: absolute;
@@ -17,7 +13,14 @@
     height: 100vh;
     background-color: rgba($color: #000000, $alpha: 0.2);
     top: 1.875rem;
-    left: -0.625rem;
+    left: 0rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include container($padding-inline: 0.625rem);
   }
 
   &__img {
@@ -38,10 +41,6 @@
     &__toggle {
       display: none;
     }
-  }
-
-  @media (min-width: 90em) {
-    @include background-clip(map-get($map: $colors, $key: "light-main"));
   }
 }
 
@@ -71,7 +70,7 @@
     width: 100vw;
     position: absolute;
     top: 1.875rem;
-    left: -0.625rem;
+    left: 0;
     background-color: map-get($map: $colors, $key: "white");
     z-index: 1;
     font-size: 0.75rem;
@@ -91,7 +90,7 @@
     }
 
     &_open {
-      & > .nav {
+      & .nav {
         display: block;
       }
       &::after {
