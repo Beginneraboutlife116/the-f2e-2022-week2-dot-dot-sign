@@ -1,6 +1,7 @@
 import Header from "../../src/components/header"
 import Footer from "../../src/components/footer"
 import Head from "next/head"
+import FileSelect from "../../src/components/file-select"
 
 export default function Main() {
   return (
@@ -11,7 +12,11 @@ export default function Main() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="main">{/* ?? */}</main>
+      <main className="main">
+        <div className="main__container">
+          <FileSelect />
+        </div>
+      </main>
       <Footer step={"upload"} />
     </div>
   )
