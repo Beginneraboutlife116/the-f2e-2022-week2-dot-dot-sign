@@ -29,6 +29,40 @@
     border-radius: 0 0 var(--border-radius) var(--border-radius);
   }
 
+  &__upload {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    display: grid;
+    place-items: center;
+    // gap: 1.25rem;
+    height: 100%;
+    border: 1px dashed map-get($map: $colors, $key: "dark-grey");
+    border-radius: 0.9375rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+
+    &:hover {
+      background-color: map-get($map: $colors, $key: "light-main");
+    }
+
+    &-input {
+      display: none;
+    }
+  }
+
+  &__info {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    grid-area: 1 / 1 / -1 / -1;
+  }
+
+  &__canvas {
+    grid-area: 1 / 1 / -1 / -1;
+  }
+
   @media (min-width: 45rem) {
     &__label {
       --height: 3.75rem;
@@ -36,6 +70,15 @@
 
     &__content {
       padding: 1.875rem;
+    }
+
+    &__upload {
+      border-radius: 1.5625rem;
+      font-size: 1rem;
+    }
+
+    &__info {
+      gap: 1.875rem;
     }
   }
 
@@ -45,5 +88,22 @@
     &__content {
       --border-radius: 2.1875rem;
     }
+
+    &__upload {
+      border-radius: 2.1875rem;
+      font-size: 1.5rem;
+    }
+
+    &__info {
+      gap: 2.5rem;
+    }
+  }
+}
+
+.pdf-icon {
+  width: 6.25rem;
+
+  @media (min-width: 45rem) {
+    width: 9rem;
   }
 }

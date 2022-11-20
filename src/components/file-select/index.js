@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useRef, useState, useEffect } from "react"
+import pdfIcon from "../../assets/img/pdf-icon.svg"
+import Image from "next/image"
 
 export default function FileSelect() {
   const [checked, setChecked] = useState("upload")
@@ -9,7 +11,7 @@ export default function FileSelect() {
     <>
       <header className="file-select__header">
         <input
-          id="upload new file"
+          id="upload"
           type="radio"
           name="action"
           onChange={handleChange}
@@ -17,11 +19,11 @@ export default function FileSelect() {
           className="file-select__radio"
           checked={checked === "upload"}
         />
-        <label htmlFor="upload new file" className="file-select__label">
+        <label htmlFor="upload" className="file-select__label">
           上傳新文件
         </label>
         <input
-          id="select uploaded files"
+          id="select"
           type="radio"
           name="action"
           onChange={handleChange}
@@ -29,7 +31,7 @@ export default function FileSelect() {
           className="file-select__radio"
           checked={checked === "select"}
         />
-        <label htmlFor="select uploaded files" className="file-select__label">
+        <label htmlFor="select" className="file-select__label">
           選擇已上傳文件
         </label>
       </header>
@@ -39,9 +41,48 @@ export default function FileSelect() {
 }
 
 function FileSelectContent() {
+  const canvasRef = useRef(null)
+  const inputLabelRef = useRef(null)
+  useEffect(() => {
+    const label = inputLabelRef.current
+    const canvas = canvasRef.current
+    canvas.height = label.offsetHeight
+    const ctx = canvas.getContext("2d")
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://mozilla.github.io/pdf.js/build/pdf.worker.js"
+  }, [])
+  function handleChange(e) {
+    const file = e.target.files[0]
+    if (file.type !== "application/pdf") {
+      console.log("wrong data type")
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      console.log("exceeded size")
+    }
+  }
   return (
     <>
-      <input type="file" />
+      <input
+        type="file"
+        name="upload"
+        id="upload file"
+        className="file-select__upload-input"
+        accept="application/pdf"
+        onChange={handleChange}
+      />
+      <label
+        htmlFor="upload file"
+        className="file-select__upload"
+        ref={inputLabelRef}>
+        <div className="file-select__info">
+          <span>點擊此處上傳 或 直接拖曳檔案</span>
+          <Image src={pdfIcon} alt="pdf icon" className="pdf-icon" />
+          <span>(限10MB以下PDF檔)</span>
+        </div>
+        {true && (
+          <canvas className="file-select__canvas" ref={canvasRef}></canvas>
+        )}
+      </label>
     </>
   )
 }
