@@ -48,8 +48,6 @@ function FileSelectContent() {
     const canvas = canvasRef.current
     canvas.height = label.offsetHeight
     const ctx = canvas.getContext("2d")
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://mozilla.github.io/pdf.js/build/pdf.worker.js"
   }, [])
   function handleChange(e) {
     const file = e.target.files[0]
