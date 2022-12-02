@@ -7,11 +7,11 @@
 首先先
 
 ```
-git clone https://github.com/Beginneraboutlife116/the-f2e-2022-week3-scrum-master-website.git
+git clone https://github.com/Beginneraboutlife116/the-f2e-2022-week2-dot-dot-sign.git
 ```
 
 ```
-cd the-f2e-2022-week3-scrum-master-website
+cd the-f2e-2022-week2-dot-dot-sign
 ```
 
 ```
@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-可以在網址使用 `https://local:3000`
+可以在網址使用 `http://localhost:3000`
 
 # 資料夾說明
 
@@ -36,6 +36,8 @@ modules
 1. React
 2. react-pdf
   - 因pdfjs無法順利安裝...
+3. Next
+  - 希望讓該網頁有SEO的效果，未來會更新實作
 
 # 採用設計稿
 
