@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 作品說明
 
-## Getting Started
+2022 The F2E week2 - 今晚，我想來點點簽
 
-First, run the development server:
+# 系統說明
 
-```bash
-npm run dev
-# or
-yarn dev
+首先先
+
+```
+git clone https://github.com/Beginneraboutlife116/the-f2e-2022-week3-scrum-master-website.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+cd the-f2e-2022-week3-scrum-master-website
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+可以在網址使用 `https://local:3000`
 
-## Learn More
+# 資料夾說明
 
-To learn more about Next.js, take a look at the following resources:
+(待更新)
+views - 畫面放置處
+controllers
+modules
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 使用技術
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. React
+2. react-pdf
+  - 因pdfjs無法順利安裝...
 
-## Deploy on Vercel
+# 採用設計稿
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 設計師：小菜 設計師
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 作品連結：[Week2 UI 設計](https://www.figma.com/file/sPyo1NZ2zYyUQ0Z7VAj3et/%E5%B0%8F%E8%8F%9C_WEEK2?node-id=20%3A198&t=1bNFvoEQvUnTU9zw-0)
+
+**如有設計圖上的需求，可自恰該設計師資訊**
+因為有此位設計師，才有如此好的畫面可以呈現，感謝 小菜 設計師 🙂
